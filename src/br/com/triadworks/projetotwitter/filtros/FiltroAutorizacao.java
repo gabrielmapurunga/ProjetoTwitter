@@ -44,7 +44,7 @@ public class FiltroAutorizacao implements Filter {
 			} else {
 				RequestDispatcher rd = request
 						.getRequestDispatcher("/login.jsp");
-				request.setAttribute("msgUsuario", "Você não tem autorização!");
+				request.setAttribute("msgUsuario", "VocÃª nÃ£o tem autorizaÃ§Ã£o!");
 				rd.forward(request, response);
 			}
 		}

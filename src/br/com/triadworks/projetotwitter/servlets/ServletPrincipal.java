@@ -16,7 +16,7 @@ public class ServletPrincipal extends HttpServlet {
 			HttpServletResponse response){
 			
 			String acao = request.getParameter("logica");
-			String nomeDaClasse = "br.triadworks.javaweb.modelo." +acao+ "Logica";
+			String nomeDaClasse = "br.com.triadworks.projetotwitter.modelo." +acao+ "Logica";
 			
 			try{
 				Class classe = Class.forName(nomeDaClasse);

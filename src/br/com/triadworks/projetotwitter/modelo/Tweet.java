@@ -69,8 +69,6 @@ public class Tweet {
 	public void setDataTweet(Calendar dataTweet) {
 		this.dataTweet = dataTweet;
 	}
-	
-	
 }
 
 

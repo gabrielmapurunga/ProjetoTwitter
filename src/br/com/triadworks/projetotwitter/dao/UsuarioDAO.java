@@ -18,7 +18,7 @@ public class UsuarioDAO {
 	public Usuario autentica(String login, String senha){
 		try {
 			
-			PreparedStatement stmt = this.connection.prepareStatement("select * from usuario where login=? and senha=?");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from projetotwitter.usuario where login=? and senha=?");
 			
 			stmt.setString(1, login);
 			stmt.setString(2, senha);

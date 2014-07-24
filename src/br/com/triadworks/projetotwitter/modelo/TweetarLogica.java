@@ -2,6 +2,7 @@ package br.com.triadworks.projetotwitter.modelo;
 
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,13 +22,21 @@ import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 
 public class TweetarLogica implements Logica {
+	
+
+	private String getData() {
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date date = new Date();
+		return dateFormat.format(date);
+	}
 
 	@Override
 	public void executar(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
 		PrintWriter out = response.getWriter();
-		String dataTweet = request.getParameter("dataTweet");
+		
+		String dataTweet = getData();
 		Calendar dataTweetConvertida = null;
 		
 		try{
@@ -44,9 +53,6 @@ public class TweetarLogica implements Logica {
 		String msg = request.getParameter("msg");
 		
 		Tweet tweet = new Tweet(usuario, msg, dataTweetConvertida);
-		tweet.setMsg(msg);
-		tweet.setUsuario(usuario);
-		tweet.setDataTweet(dataTweetConvertida);
 		
 		Connection conexao = (Connection) request.getAttribute("conexao");
 		TweetDAO dao = new TweetDAO(conexao);

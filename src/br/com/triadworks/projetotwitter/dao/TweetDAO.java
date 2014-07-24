@@ -1,9 +1,12 @@
 package br.com.triadworks.projetotwitter.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -21,16 +24,17 @@ public class TweetDAO {
 	
 	public void Tweetar(Tweet tweet) {
 		String sql = "insert into tweet" +
-					"(idUsuario, msg, respondendo, idRespondido)" +
-					"values(?,?,?,?)";
+					"(msg, resposta, idUsuario, idTweetRespondido, dataTweet)" +
+					"values(?,?,?,?,?)";
 		
 		try {
 			PreparedStatement pstmt = conexao.prepareStatement(sql);
 			
-			pstmt.setInt(1, tweet.getUsuario().getId());
-			pstmt.setString(2, tweet.getMsg());
-			pstmt.setBoolean(3, tweet.isRespondendo());
+			pstmt.setString(1, tweet.getMsg());
+			pstmt.setBoolean(2, tweet.isRespondendo());
+			pstmt.setInt(3, tweet.getUsuario().getId());
 			pstmt.setInt(4, tweet.getIdTweetRespondido());
+			pstmt.setDate(5, new Date(tweet.getDataTweet().getTimeInMillis()));
 			
 			pstmt.execute();
 			pstmt.close();

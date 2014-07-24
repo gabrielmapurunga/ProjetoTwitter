@@ -32,7 +32,7 @@ public class AutenticaUsuarioLogica implements Logica {
 			rd.forward(request, response);
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-			request.setAttribute("msgUsuario", "Login ou senha inv·lidos!");
+			request.setAttribute("msgUsuario", "Login ou senha inv√°lidos!");
 			rd.forward(request, response);
 		}
 
