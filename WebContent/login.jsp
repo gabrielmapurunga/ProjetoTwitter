@@ -7,7 +7,7 @@
 <title>Acessar Projeto Twitter</title>
 </head>
 <body>
-	<form action="sistema?logica=AutenticaUsuario" method="post"
+	<form action="principal?logica=AutenticaUsuario" method="post"
 		id="formLogar">
 		Login: <input type="text" name="login" value="" /> 
 		Senha: <input type="password" name="senha" value="" /> 
