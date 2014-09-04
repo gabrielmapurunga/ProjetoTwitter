@@ -5,8 +5,6 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -23,7 +21,7 @@ public class TweetDAO {
 	}
 	
 	public void Tweetar(Tweet tweet) {
-		String sql = "insert into tweet" +
+		String sql = "insert into projetotwitter.tweet" +
 					"(msg, resposta, idUsuario, idTweetRespondido, dataTweet)" +
 					"values(?,?,?,?,?)";
 		

@@ -1,7 +1,6 @@
 package br.com.triadworks.projetotwitter.modelo;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import br.com.triadworks.projetotwitter.modelo.Usuario;
 
@@ -15,6 +14,7 @@ public class Tweet {
 	private Calendar dataTweet;
 	
 	public Tweet(Usuario usuario, String msg, Calendar dataTweet) {
+		super();
 		this.usuario = usuario;
 		this.msg = msg;
 		this.setDataTweet(dataTweet);
