@@ -31,8 +31,11 @@ public class UsuarioDAO {
 				String uLogin = rs.getString("login");
 				String uSenha = rs.getString("senha");
 				
-				usuario = new Usuario(id, uLogin, uSenha);
+				usuario = new Usuario();
+				usuario.setId(id);
 				
+				usuario.setLogin(uLogin);
+				usuario.setSenha(uSenha);
 			}
 			
 			rs.close();
