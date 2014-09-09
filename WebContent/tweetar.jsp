@@ -11,7 +11,7 @@
 	<form action="principal" method="post">
 				<input type="hidden" name="logica" value="Tweetar"/>
 				
-				<input type="text" maxlength="140" value="msg">
+				<input type="text" name="msg" maxlength="140" value="">
 				
 				<input type="submit" value="Salvar"/>
 	</form>			

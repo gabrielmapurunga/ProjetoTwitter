@@ -48,7 +48,7 @@ public class TweetarLogica implements Logica {
 		}
 		
 		HttpSession sessao = request.getSession();
-		Usuario usuario = (Usuario) sessao.getAttribute("usuario");
+		Usuario usuario = (Usuario) sessao.getAttribute("usuarioLogado");
 		
 		String msg = request.getParameter("msg");
 		
