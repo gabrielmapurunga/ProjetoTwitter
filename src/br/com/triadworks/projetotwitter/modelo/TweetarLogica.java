@@ -25,7 +25,7 @@ public class TweetarLogica implements Logica {
 	
 
 	private String getData() {
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy 'at' HH:mm:ss");
 		Date date = new Date();
 		return dateFormat.format(date);
 	}
@@ -40,7 +40,7 @@ public class TweetarLogica implements Logica {
 		Calendar dataTweetConvertida = null;
 		
 		try{
-			Date data = new SimpleDateFormat("dd/MM/yyyy").parse(dataTweet);
+			Date data = new SimpleDateFormat("dd/MM/yyyy 'at' HH:mm:ss").parse(dataTweet);
 			dataTweetConvertida = Calendar.getInstance();
 			dataTweetConvertida.setTime(data);
 		} catch (ParseException e){

@@ -8,7 +8,7 @@ public class RetweetarLogica implements Logica {
 	@Override
 	public void executar(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
+		
 
 	}
 
