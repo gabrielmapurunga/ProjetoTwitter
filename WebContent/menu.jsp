@@ -22,7 +22,14 @@
 	
 				<td>${tweet.dataTweet.time}</td>
 				
-				<td><a href='<c:url value="/principal?logica=Retweetar" />'> Retweetar! </a></td>
+				<td>
+				<form method="post" action="Retweetar">
+						<input type="hidden" value="${tweet.idTweet }" id=idTweet name=idTweet>
+						
+				<a href='<c:url value="/principal?logica=Retweetar" />'> Retweetar! </a>
+				</form>
+				</td>
+				
 			</tr>
 		</c:forEach>			
 	</table>
